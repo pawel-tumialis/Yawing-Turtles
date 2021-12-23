@@ -1,1 +1,2 @@
-# Hackathon
+# Yawing Turtles
+Repository for Hackathon contest
