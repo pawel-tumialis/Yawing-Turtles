@@ -1,4 +1,4 @@
 # Pre elimination task
 
-Our code is written in C++
-GUI was created with C++Builder
+Our code was written in C++_
+GUI was created with C++Builder_
