@@ -19,7 +19,7 @@ TMainWindow *MainWindow;
 		SavePath="";
 		LoadPath="";
    }
-	  String FindExtension(){
+	  void FindExtension(){
 		int dot=LoadPath.Pos(".");
 		int length=LoadPath.Length()+1;
         ImageExtension=LoadPath.SubString(dot,length-dot);

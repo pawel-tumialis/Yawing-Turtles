@@ -12,21 +12,25 @@ TMainWindow *MainWindow;
 
 	  struct Image{
    public:
-   String ImageName;
+   String ImageExtension;
    String LoadPath;
    String SavePath;
 	  void ClearImage(){
 		SavePath="";
 		LoadPath="";
-		ImageName="";
    }
-      Image(){
-	   ClearImage();
+	  String FindExtension(){
+		int dot=LoadPath.Pos(".");
+		int length=LoadPath.Length()+1;
+        ImageExtension=LoadPath.SubString(dot,length-dot);
+	  }
+	  Image(){
+		ClearImage();
    }
 }Image1;
 
 const String InfoAuthors="This program was written by: \n Agnieszka Klingiert \n Mateusz Po³om \n Mateusz Porêbiak \n Pawe³ Tumialis";
-const String InfoProject="This program supports images in three extentions: .bmp, .jpeg, .png";
+const String InfoProject="This program supports images in three extentions: .bmp, .jpg, .png";
 
 //---------------------------------------------------------------------------
 __fastcall TMainWindow::TMainWindow(TComponent* Owner)
@@ -68,17 +72,17 @@ void __fastcall TMainWindow::LoadClick(TObject *Sender)
 		if (FileExists(OpenDialog1->FileName)){
 				Image1.LoadPath=OpenDialog1->FileName;
 				ShowMessage(Image1.LoadPath);
+				Image1.FindExtension();
+				ShowMessage(Image1.ImageExtension);
 		}
 	}
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TMainWindow::SaveClick(TObject *Sender) //!!!!
+void __fastcall TMainWindow::SaveClick(TObject *Sender)
 {
 		 if(SaveDialog1->Execute()){
 			Image1.SavePath=SaveDialog1->FileName;
 			ShowMessage(Image1.SavePath);
 		 }
 }
-//---------------------------------------------------------------------------
-
