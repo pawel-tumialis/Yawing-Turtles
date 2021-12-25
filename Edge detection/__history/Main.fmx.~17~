@@ -1,0 +1,89 @@
+object MainWindow: TMainWindow
+  Left = 0
+  Top = 0
+  Caption = 'EdgeDetector'
+  ClientHeight = 260
+  ClientWidth = 350
+  Fill.Kind = Gradient
+  Fill.Gradient.Points = <
+    item
+      Color = xFFC3F0F5
+      Offset = 0.000000000000000000
+    end
+    item
+      Color = claWhite
+      Offset = 1.000000000000000000
+    end>
+  Fill.Gradient.Style = Radial
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object RunButtom: TButton
+    Align = Scale
+    Position.X = 120.343841552734400000
+    Position.Y = 201.550384521484400000
+    Size.Width = 105.300857543945300000
+    Size.Height = 42.325576782226560000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Run'
+    OnClick = RunClick
+  end
+  object OpenDialog1: TOpenDialog
+    FileName = 'C:\Users\pawel\Downloads\turtle.jpg'
+    Options = [ofReadOnly, ofHideReadOnly, ofEnableSizing]
+    Left = 216
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 288
+  end
+  object Label3: TLabel
+    Align = Scale
+    StyledSettings = [Family, FontColor]
+    Position.X = 104.297988891601600000
+    Position.Y = 32.248062133789060000
+    Size.Width = 161.461318969726600000
+    Size.Height = 49.379844665527340000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 24.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Edge Detector'
+    TabOrder = 6
+  end
+  object Button1: TButton
+    Position.X = 48.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Load image'
+  end
+  object Button2: TButton
+    Position.X = 216.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Save image'
+  end
+  object MainMenu1: TMainMenu
+    Left = 72
+    object Info: TMenuItem
+      Text = 'Info'
+      object Authors: TMenuItem
+        Locked = True
+        Text = 'Authors'
+        OnClick = AuthorsClick
+      end
+      object Project: TMenuItem
+        Locked = True
+        Text = 'Project'
+        OnClick = ProjectClick
+      end
+    end
+  end
+end

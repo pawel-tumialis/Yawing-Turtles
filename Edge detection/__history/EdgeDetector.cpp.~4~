@@ -1,0 +1,62 @@
+//---------------------------------------------------------------------------
+
+#include <fmx.h>
+#ifdef _WIN32
+#include <tchar.h>
+#endif
+#pragma hdrstop
+#include <System.StartUpCopy.hpp>
+//---------------------------------------------------------------------------
+USEFORM("Main.cpp", MainWindow);
+//---------------------------------------------------------------------------
+
+struct Image{
+   protected:
+   String ImageName;
+   String LoadPath;
+   String SavePath;
+   public:
+   void GetImageName(String Name){
+		ImageName=Name;
+   }
+   void GetLoadPath(String Path){
+		LoadPath=Path;
+   }
+	  void GetSavePath(String Path){
+		SavePath=Path;
+   }
+	  void ClearImage(){
+		SavePath="";
+		LoadPath="";
+		ImageName="";
+   }
+};
+
+extern "C" int FMXmain()
+{
+	try
+	{
+		Application->Initialize();
+		Application->CreateForm(__classid(TMainWindow), &MainWindow);
+		Application->Run();
+		Image image1;
+        image1.ClearImage();
+	}
+	catch (Exception &exception)
+	{
+		Application->ShowException(&exception);
+	}
+	catch (...)
+	{
+		try
+		{
+			throw Exception("");
+		}
+		catch (Exception &exception)
+		{
+			Application->ShowException(&exception);
+		}
+	}
+	return 0;
+}
+//---------------------------------------------------------------------------

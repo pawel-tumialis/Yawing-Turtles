@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------
+
+#ifndef MainH
+#define MainH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <FMX.Controls.hpp>
+#include <FMX.Forms.hpp>
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.StdCtrls.hpp>
+#include <FMX.Types.hpp>
+#include <FMX.Graphics.hpp>
+#include <FMX.Menus.hpp>
+#include <FMX.Dialogs.hpp>
+//---------------------------------------------------------------------------
+class TEdgeDetector : public TForm
+{
+__published:	// IDE-managed Components
+	TButton *Button1;
+	TBrushObject *Brush1;
+	TOpenDialog *OpenDialog1;
+	TSaveDialog *SaveDialog1;
+	TMainMenu *MainMenu1;
+	TMenuItem *Info;
+	TMenuItem *Authors;
+	TMenuItem *Project;
+	void __fastcall RunClick(TObject *Sender);
+	void __fastcall AuthorsClick(TObject *Sender);
+	void __fastcall ProjectClick(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TEdgeDetector(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TEdgeDetector *EdgeDetector;
+//---------------------------------------------------------------------------
+#endif

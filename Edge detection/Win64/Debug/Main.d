@@ -1,4 +1,5 @@
-.\Win64\Debug\Main.o: C:\PROGRAMOWANIE\Edge_detection\MainProjectPCH1.h \
+.\Win64\Debug\Main.o: \
+  C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection\EdgeDetectorPCH1.h \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\fmx.h \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\rtl\System.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\rtl\sysmac.h \
@@ -329,4 +330,5 @@
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.Memo.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.Memo.Types.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.TreeView.hpp \
-  Main.cpp C:\PROGRAMOWANIE\Edge_detection/Main.h
+  Main.cpp \
+  C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection/Main.h
