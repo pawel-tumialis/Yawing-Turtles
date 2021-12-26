@@ -32,6 +32,11 @@ void czytaj_BITMAPFILEHEADER(ifstream& plik_wejsciowy, BITMAPFILEHEADER& bfh) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfReserved1), 2);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfReserved2), 2);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfOffBits), 4);
+	cout << bfh.bfType<<endl;
+	cout << bfh.bfSize << endl;
+	cout << bfh.bfReserved1<< endl;
+	cout << bfh.bfReserved2<< endl;
+	cout << bfh.bfOffBits<< endl<<endl;
 }
 void czytaj_BITMAPINFOHEADER(ifstream& plik_wejsciowy, BITMAPINFOHEADER& bih) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biSize), 4);
@@ -45,6 +50,17 @@ void czytaj_BITMAPINFOHEADER(ifstream& plik_wejsciowy, BITMAPINFOHEADER& bih) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biYpelsPerMeter), 4);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biCrlUses), 4);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biCrlImportant), 4);
+	cout << bih.biSize<< endl;
+	cout << bih.biWidth<< endl;
+	cout << bih.biHeight<< endl;
+	cout << bih.biPlanes<< endl;
+	cout << bih.biBitCount<< endl;
+	cout << bih.biCompression<< endl;
+	cout << bih.biSizeImage<< endl;
+	cout << bih.biXpelsPerMeter<< endl;
+	cout << bih.biYpelsPerMeter<< endl;
+	cout << bih.biCrlUses<< endl;
+	cout << bih.biCrlImportant<< endl;
 }
 
 void zapisuj_BITMAPFILEHEADER(ofstream& plik_wyjsciowy, BITMAPFILEHEADER& bfh) {
@@ -104,12 +120,25 @@ int main()
 	zapisuj_BITMAPINFOHEADER(plik_wyjsciowy, bih);
 
 	int p = 0;
-
+	int r = 0;
+	int g = 0;
+	int b = 0;
 	for (int i = 0; i < bih.biHeight; i++) {
 		for (int i = 0; i < bih.biWidth; i++) {
-			plik_wejsciowy.read(reinterpret_cast<char*>(&p), 1);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&b), 1);
+			cout << b<<endl;
 			plik_wejsciowy.seekg(2, ios::cur);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&g), 1);
+			plik_wejsciowy.seekg(3, ios::cur);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&r), 1);
+			plik_wejsciowy.seekg(4, ios::cur);
+			plik_wyjsciowy.write(reinterpret_cast<char*>(&b), 1);
+			plik_wyjsciowy.write(reinterpret_cast<char*>(&g), 1);
+			plik_wyjsciowy.write(reinterpret_cast<char*>(&r), 1);
 		}
+		dodanie_zer(bih, plik_wyjsciowy);
+		plik_wejsciowy.seekg(1, ios::cur);
+		
 	}
 
 	
