@@ -96,7 +96,7 @@ void dodanie_zer(BITMAPINFOHEADER bih, ofstream& plik_wyjsciowy) {
 }
 
 int main()
-{
+{//jak na razie kopiuje jeden do jednego obraz wejsciowy 
 	ifstream plik_wejsciowy;
 	ofstream plik_wyjsciowy;
 
@@ -126,18 +126,18 @@ int main()
 	for (int i = 0; i < bih.biHeight; i++) {
 		for (int i = 0; i < bih.biWidth; i++) {
 			plik_wejsciowy.read(reinterpret_cast<char*>(&b), 1);
-			cout << b<<endl;
-			plik_wejsciowy.seekg(2, ios::cur);
+		
+		
 			plik_wejsciowy.read(reinterpret_cast<char*>(&g), 1);
-			plik_wejsciowy.seekg(3, ios::cur);
+		
 			plik_wejsciowy.read(reinterpret_cast<char*>(&r), 1);
-			plik_wejsciowy.seekg(4, ios::cur);
+		
 			plik_wyjsciowy.write(reinterpret_cast<char*>(&b), 1);
 			plik_wyjsciowy.write(reinterpret_cast<char*>(&g), 1);
 			plik_wyjsciowy.write(reinterpret_cast<char*>(&r), 1);
 		}
 		dodanie_zer(bih, plik_wyjsciowy);
-		plik_wejsciowy.seekg(1, ios::cur);
+		
 		
 	}
 
