@@ -1,6 +1,7 @@
 object MainWindow: TMainWindow
   Left = 0
   Top = 0
+  BorderStyle = ToolWindow
   Caption = 'EdgeDetector'
   ClientHeight = 260
   ClientWidth = 350
@@ -23,10 +24,10 @@ object MainWindow: TMainWindow
   object OpenDialog1: TOpenDialog
     FileName = 'C:\Users\pawel\Downloads\turtle.jpg'
     Options = [ofReadOnly, ofHideReadOnly, ofEnableSizing]
-    Left = 216
+    Left = 72
   end
   object SaveDialog1: TSaveDialog
-    Left = 288
+    Left = 304
   end
   object Label3: TLabel
     Align = Scale
@@ -61,6 +62,7 @@ object MainWindow: TMainWindow
     Size.PlatformDefault = False
     TabOrder = 6
     Text = 'Save image'
+    OnClick = SaveClick
   end
   object Button3: TButton
     Align = Scale
@@ -74,7 +76,7 @@ object MainWindow: TMainWindow
     OnClick = RunClick
   end
   object MainMenu1: TMainMenu
-    Left = 72
+    Left = 8
     object Info: TMenuItem
       Text = 'Info'
       object Authors: TMenuItem
@@ -88,5 +90,15 @@ object MainWindow: TMainWindow
         OnClick = ProjectClick
       end
     end
+  end
+  object LoadBox: TCheckBox
+    Align = Scale
+    Enabled = False
+    Position.X = 144.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 43.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
   end
 end

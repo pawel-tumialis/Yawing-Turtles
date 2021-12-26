@@ -18,8 +18,9 @@ TMainWindow *MainWindow;
 	  void ClearImage(){
 		SavePath="";
 		LoadPath="";
+        ImageExtension="";
    }
-	  String FindExtension(){
+	  void FindExtension(){
 		int dot=LoadPath.Pos(".");
 		int length=LoadPath.Length()+1;
         ImageExtension=LoadPath.SubString(dot,length-dot);
@@ -30,7 +31,7 @@ TMainWindow *MainWindow;
 }Image1;
 
 const String InfoAuthors="This program was written by: \n Agnieszka Klingiert \n Mateusz Po³om \n Mateusz Porêbiak \n Pawe³ Tumialis";
-const String InfoProject="This program supports images in three extentions: .bmp, .jpeg, .png";
+const String InfoProject="This program supports images in three extentions: .bmp, .jpg, .png";
 
 //---------------------------------------------------------------------------
 __fastcall TMainWindow::TMainWindow(TComponent* Owner)
@@ -60,7 +61,8 @@ void __fastcall TMainWindow::RunClick(TObject *Sender)
 	}else if(Image1.SavePath==""){
 		ShowMessage("You didn`t choose save location!");
 	}else{
-		ShowMessage("WORKING");
+		ShowMessage("Algorithm");
+        Image1.ClearImage();
 	}
 
 }
@@ -86,5 +88,3 @@ void __fastcall TMainWindow::SaveClick(TObject *Sender)
 			ShowMessage(Image1.SavePath);
 		 }
 }
-//---------------------------------------------------------------------------
-

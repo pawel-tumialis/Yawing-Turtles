@@ -26,6 +26,8 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TButton *Button2;
 	TButton *Button3;
+	TCheckBox *LoadBox;
+	TCheckBox *SaveBox;
 	void __fastcall AuthorsClick(TObject *Sender);
 	void __fastcall ProjectClick(TObject *Sender);
 	void __fastcall RunClick(TObject *Sender);

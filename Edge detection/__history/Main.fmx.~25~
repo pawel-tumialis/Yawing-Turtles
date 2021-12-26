@@ -23,10 +23,10 @@ object MainWindow: TMainWindow
   object OpenDialog1: TOpenDialog
     FileName = 'C:\Users\pawel\Downloads\turtle.jpg'
     Options = [ofReadOnly, ofHideReadOnly, ofEnableSizing]
-    Left = 216
+    Left = 72
   end
   object SaveDialog1: TSaveDialog
-    Left = 288
+    Left = 304
   end
   object Label3: TLabel
     Align = Scale
@@ -50,6 +50,7 @@ object MainWindow: TMainWindow
     Size.PlatformDefault = False
     TabOrder = 5
     Text = 'Load image'
+    OnClick = LoadClick
   end
   object Button2: TButton
     Align = Scale
@@ -60,9 +61,21 @@ object MainWindow: TMainWindow
     Size.PlatformDefault = False
     TabOrder = 6
     Text = 'Save image'
+    OnClick = SaveClick
+  end
+  object Button3: TButton
+    Align = Scale
+    Position.X = 128.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Run'
+    OnClick = RunClick
   end
   object MainMenu1: TMainMenu
-    Left = 72
+    Left = 8
     object Info: TMenuItem
       Text = 'Info'
       object Authors: TMenuItem

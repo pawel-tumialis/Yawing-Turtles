@@ -1,7 +1,7 @@
 object MainWindow: TMainWindow
   Left = 0
   Top = 0
-  BorderStyle = ToolWindow
+  BorderStyle = SizeToolWin
   Caption = 'EdgeDetector'
   ClientHeight = 260
   ClientWidth = 350
@@ -90,25 +90,5 @@ object MainWindow: TMainWindow
         OnClick = ProjectClick
       end
     end
-  end
-  object LoadBox: TCheckBox
-    Align = Scale
-    Enabled = False
-    Position.X = 144.000000000000000000
-    Position.Y = 144.000000000000000000
-    Size.Width = 33.000000000000000000
-    Size.Height = 43.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 11
-  end
-  object SaveBox: TCheckBox
-    Align = Scale
-    Enabled = False
-    Position.X = 312.000000000000000000
-    Position.Y = 144.000000000000000000
-    Size.Width = 73.000000000000000000
-    Size.Height = 41.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 12
   end
 end

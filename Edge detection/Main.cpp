@@ -18,6 +18,7 @@ TMainWindow *MainWindow;
 	  void ClearImage(){
 		SavePath="";
 		LoadPath="";
+        ImageExtension="";
    }
 	  void FindExtension(){
 		int dot=LoadPath.Pos(".");
@@ -60,7 +61,10 @@ void __fastcall TMainWindow::RunClick(TObject *Sender)
 	}else if(Image1.SavePath==""){
 		ShowMessage("You didn`t choose save location!");
 	}else{
-		ShowMessage("WORKING");
+		ShowMessage("Algorithm");
+		Image1.ClearImage();
+		LoadBox->IsChecked=false;
+		SaveBox->IsChecked=false;
 	}
 
 }
@@ -71,9 +75,10 @@ void __fastcall TMainWindow::LoadClick(TObject *Sender)
 	if(OpenDialog1->Execute()){
 		if (FileExists(OpenDialog1->FileName)){
 				Image1.LoadPath=OpenDialog1->FileName;
-				ShowMessage(Image1.LoadPath);
+				//ShowMessage(Image1.LoadPath);
 				Image1.FindExtension();
-				ShowMessage(Image1.ImageExtension);
+				//ShowMessage(Image1.ImageExtension);
+				LoadBox->IsChecked=true;
 		}
 	}
 }
@@ -83,6 +88,8 @@ void __fastcall TMainWindow::SaveClick(TObject *Sender)
 {
 		 if(SaveDialog1->Execute()){
 			Image1.SavePath=SaveDialog1->FileName;
-			ShowMessage(Image1.SavePath);
+			//ShowMessage(Image1.SavePath);
+			SaveBox->IsChecked=true;
 		 }
 }
+

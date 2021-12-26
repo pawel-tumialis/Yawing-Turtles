@@ -1,6 +1,7 @@
 object MainWindow: TMainWindow
   Left = 0
   Top = 0
+  BorderStyle = SizeToolWin
   Caption = 'EdgeDetector'
   ClientHeight = 260
   ClientWidth = 350
@@ -19,25 +20,15 @@ object MainWindow: TMainWindow
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
-  object RunButtom: TButton
-    Align = Scale
-    Position.X = 120.343841552734400000
-    Position.Y = 201.550384521484400000
-    Size.Width = 105.300857543945300000
-    Size.Height = 42.325576782226560000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    Text = 'Run'
-    OnClick = RunClick
-  end
   object OpenDialog1: TOpenDialog
     FileName = 'C:\Users\pawel\Downloads\turtle.jpg'
     Options = [ofReadOnly, ofHideReadOnly, ofEnableSizing]
-    Left = 216
+    Left = 72
   end
   object SaveDialog1: TSaveDialog
-    Left = 288
+    Left = 304
   end
   object Label3: TLabel
     Align = Scale
@@ -50,28 +41,43 @@ object MainWindow: TMainWindow
     TextSettings.Font.Size = 24.000000000000000000
     TextSettings.Font.StyleExt = {00070000000000000004000000}
     Text = 'Edge Detector'
-    TabOrder = 6
+    TabOrder = 4
   end
   object Button1: TButton
+    Align = Scale
     Position.X = 48.000000000000000000
     Position.Y = 152.000000000000000000
     Size.Width = 89.000000000000000000
     Size.Height = 33.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 7
+    TabOrder = 5
     Text = 'Load image'
+    OnClick = LoadClick
   end
   object Button2: TButton
+    Align = Scale
     Position.X = 216.000000000000000000
     Position.Y = 152.000000000000000000
     Size.Width = 89.000000000000000000
     Size.Height = 33.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 8
+    TabOrder = 6
     Text = 'Save image'
+    OnClick = SaveClick
+  end
+  object Button3: TButton
+    Align = Scale
+    Position.X = 128.000000000000000000
+    Position.Y = 208.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Run'
+    OnClick = RunClick
   end
   object MainMenu1: TMainMenu
-    Left = 72
+    Left = 8
     object Info: TMenuItem
       Text = 'Info'
       object Authors: TMenuItem
