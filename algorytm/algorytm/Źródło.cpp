@@ -95,8 +95,20 @@ void dodanie_zer(BITMAPINFOHEADER bih, ofstream& plik_wyjsciowy) {
 	}
 }
 
+void odcienie_szaroœci(int rin,int gin,int bin, ofstream& plik_wyjsciowy) {
+	int rsz = 0;
+	int gsz = 0;
+	int bsz = 0;
+	rsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
+	gsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
+	bsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&bsz), 1);
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&gsz), 1);
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&rsz), 1);
+}
+
 int main()
-{//jak na razie kopiuje jeden do jednego obraz wejsciowy 
+{//zamienia na odcienie szaroœci
 	ifstream plik_wejsciowy;
 	ofstream plik_wyjsciowy;
 
@@ -119,22 +131,20 @@ int main()
 	zapisuj_BITMAPFILEHEADER(plik_wyjsciowy, bfh);
 	zapisuj_BITMAPINFOHEADER(plik_wyjsciowy, bih);
 
-	int p = 0;
-	int r = 0;
-	int g = 0;
-	int b = 0;
+	
+	int rin = 0;
+	int gin = 0;
+	int bin = 0;
 	for (int i = 0; i < bih.biHeight; i++) {
 		for (int i = 0; i < bih.biWidth; i++) {
-			plik_wejsciowy.read(reinterpret_cast<char*>(&b), 1);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&bin), 1);
 		
 		
-			plik_wejsciowy.read(reinterpret_cast<char*>(&g), 1);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&gin), 1);
 		
-			plik_wejsciowy.read(reinterpret_cast<char*>(&r), 1);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&rin), 1);
 		
-			plik_wyjsciowy.write(reinterpret_cast<char*>(&b), 1);
-			plik_wyjsciowy.write(reinterpret_cast<char*>(&g), 1);
-			plik_wyjsciowy.write(reinterpret_cast<char*>(&r), 1);
+			odcienie_szaroœci(rin,gin,bin,plik_wyjsciowy);
 		}
 		dodanie_zer(bih, plik_wyjsciowy);
 		
