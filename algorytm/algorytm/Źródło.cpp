@@ -32,11 +32,11 @@ void czytaj_BITMAPFILEHEADER(ifstream& plik_wejsciowy, BITMAPFILEHEADER& bfh) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfReserved1), 2);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfReserved2), 2);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bfh.bfOffBits), 4);
-	cout << bfh.bfType<<endl;
+	cout << bfh.bfType << endl;
 	cout << bfh.bfSize << endl;
-	cout << bfh.bfReserved1<< endl;
-	cout << bfh.bfReserved2<< endl;
-	cout << bfh.bfOffBits<< endl<<endl;
+	cout << bfh.bfReserved1 << endl;
+	cout << bfh.bfReserved2 << endl;
+	cout << bfh.bfOffBits << endl << endl;
 }
 void czytaj_BITMAPINFOHEADER(ifstream& plik_wejsciowy, BITMAPINFOHEADER& bih) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biSize), 4);
@@ -50,17 +50,17 @@ void czytaj_BITMAPINFOHEADER(ifstream& plik_wejsciowy, BITMAPINFOHEADER& bih) {
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biYpelsPerMeter), 4);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biCrlUses), 4);
 	plik_wejsciowy.read(reinterpret_cast<char*>(&bih.biCrlImportant), 4);
-	cout << bih.biSize<< endl;
-	cout << bih.biWidth<< endl;
-	cout << bih.biHeight<< endl;
-	cout << bih.biPlanes<< endl;
-	cout << bih.biBitCount<< endl;
-	cout << bih.biCompression<< endl;
-	cout << bih.biSizeImage<< endl;
-	cout << bih.biXpelsPerMeter<< endl;
-	cout << bih.biYpelsPerMeter<< endl;
-	cout << bih.biCrlUses<< endl;
-	cout << bih.biCrlImportant<< endl;
+	cout << bih.biSize << endl;
+	cout << bih.biWidth << endl;
+	cout << bih.biHeight << endl;
+	cout << bih.biPlanes << endl;
+	cout << bih.biBitCount << endl;
+	cout << bih.biCompression << endl;
+	cout << bih.biSizeImage << endl;
+	cout << bih.biXpelsPerMeter << endl;
+	cout << bih.biYpelsPerMeter << endl;
+	cout << bih.biCrlUses << endl;
+	cout << bih.biCrlImportant << endl;
 }
 
 void zapisuj_BITMAPFILEHEADER(ofstream& plik_wyjsciowy, BITMAPFILEHEADER& bfh) {
@@ -95,20 +95,31 @@ void dodanie_zer(BITMAPINFOHEADER bih, ofstream& plik_wyjsciowy) {
 	}
 }
 
-void odcienie_szaroœci(int rin,int gin,int bin, ofstream& plik_wyjsciowy) {
-	int rsz = 0;
-	int gsz = 0;
-	int bsz = 0;
-	rsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
-	gsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
-	bsz = 0.299 * rin + 0.587 * gin + 0.114 * bin;
-	plik_wyjsciowy.write(reinterpret_cast<char*>(&bsz), 1);
-	plik_wyjsciowy.write(reinterpret_cast<char*>(&gsz), 1);
-	plik_wyjsciowy.write(reinterpret_cast<char*>(&rsz), 1);
+void odcienie_szaroœci(int& rin, int& gin, int& bin) {
+
+	rin = 0.299 * rin + 0.587 * gin + 0.114 * bin;
+	gin = rin;
+	bin = gin;
+	//cout << endl << endl << rin << endl;
+	//cout << gin << endl;
+	//cout << bin << endl;
+}
+
+void wykrycie_krawedzi(int rin, int gin, int bin, int rin2, int gin2, int bin2, int rin3, int gin3, int bin3, int rin4, int gin4, int bin4, ofstream& plik_wyjsciowy) {
+	int r = abs(rin - rin4) + abs(rin2 - rin3);
+	int g = abs(gin - gin4) + abs(gin2 - gin3);
+	int b = abs(bin - bin4) + abs(bin2 - bin3);
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&b), 1);
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&g), 1);
+	plik_wyjsciowy.write(reinterpret_cast<char*>(&r), 1);
+
+	//cout << endl << rin << endl;
+	//cout << gin << endl;
+	//cout << bin << endl;
 }
 
 int main()
-{//zamienia na odcienie szaroœci
+{
 	ifstream plik_wejsciowy;
 	ofstream plik_wyjsciowy;
 
@@ -131,29 +142,64 @@ int main()
 	zapisuj_BITMAPFILEHEADER(plik_wyjsciowy, bfh);
 	zapisuj_BITMAPINFOHEADER(plik_wyjsciowy, bih);
 
-	
-	int rin = 0;
-	int gin = 0;
-	int bin = 0;
-	for (int i = 0; i < bih.biHeight; i++) {
+
+	int a = 0;
+	for (int j = 0; j < bih.biHeight; j++) {
 		for (int i = 0; i < bih.biWidth; i++) {
-			plik_wejsciowy.read(reinterpret_cast<char*>(&bin), 1);
-		
-		
-			plik_wejsciowy.read(reinterpret_cast<char*>(&gin), 1);
-		
-			plik_wejsciowy.read(reinterpret_cast<char*>(&rin), 1);
-		
-			odcienie_szaroœci(rin,gin,bin,plik_wyjsciowy);
+			a++;
+			int rin1 = 0;
+			int gin1 = 0;
+			int bin1 = 0;
+			int rin2 = 0;
+			int gin2 = 0;
+			int bin2 = 0;
+			int rin3 = 0;
+			int gin3 = 0;
+			int bin3 = 0;
+			int rin4 = 0;
+			int gin4 = 0;
+			int bin4 = 0;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&bin1), 1);
+			//cout << i << '.' << plik_wejsciowy.tellg()<<endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&gin1), 1);
+			//cout << i +1 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&rin1), 1);
+			//cout << i + 2 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&bin2), 1);
+			//cout << i + 3 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&gin2), 1);
+			//cout << i + 4 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&rin2), 1);
+			//cout << i + 5 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.seekg(bih.biWidth - 1, ios::cur);
+			plik_wejsciowy.read(reinterpret_cast<char*>(&bin3), 1);
+			//cout << i + bih.biWidth << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&gin3), 1);
+			//cout << i + bih.biWidth+1 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&rin3), 1);
+			//cout << i + bih.biWidth+2 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&bin4), 1);
+			//cout << i + bih.biWidth+3 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&gin4), 1);
+			//cout << i + bih.biWidth+4 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.read(reinterpret_cast<char*>(&rin4), 1);
+			//cout << i + bih.biWidth+5 << '.' << plik_wejsciowy.tellg() << endl;
+			plik_wejsciowy.seekg( 1 + i + (j * (bih.biWidth)), ios::beg);//dodaj i
+			//cout << i + bih.biWidth+6 << '.' << plik_wejsciowy.tellg() << endl;
+			odcienie_szaroœci(rin1, gin1, bin1);
+			odcienie_szaroœci(rin2, gin2, bin2);
+			odcienie_szaroœci(rin3, gin3, bin3);
+			odcienie_szaroœci(rin4, gin4, bin4);
+			wykrycie_krawedzi(rin1, gin1, bin1, rin2, gin2, bin2, rin3, gin3, bin3, rin4, gin4, bin4, plik_wyjsciowy);
 		}
 		dodanie_zer(bih, plik_wyjsciowy);
-		
-		
+
+
 	}
 
-	
 
-		plik_wejsciowy.close();
-		plik_wyjsciowy.close();
-		return 0;
+	cout << endl << a << endl;
+	plik_wejsciowy.close();
+	plik_wyjsciowy.close();
+	return 0;
 }
