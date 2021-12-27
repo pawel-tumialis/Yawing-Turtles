@@ -171,6 +171,7 @@ int main()
 			//cout << i + 4 << '.' << plik_wejsciowy.tellg() << endl;
 			plik_wejsciowy.read(reinterpret_cast<char*>(&rin2), 1);
 			//cout << i + 5 << '.' << plik_wejsciowy.tellg() << endl;
+			if(a<(bih.biHeight*bih.biWidth )/2){
 			plik_wejsciowy.seekg(bih.biWidth - 1, ios::cur);
 			plik_wejsciowy.read(reinterpret_cast<char*>(&bin3), 1);
 			//cout << i + bih.biWidth << '.' << plik_wejsciowy.tellg() << endl;
@@ -186,6 +187,8 @@ int main()
 			//cout << i + bih.biWidth+5 << '.' << plik_wejsciowy.tellg() << endl;
 			plik_wejsciowy.seekg( 1 + i + (j * (bih.biWidth)), ios::beg);//dodaj i
 			//cout << i + bih.biWidth+6 << '.' << plik_wejsciowy.tellg() << endl;
+			}
+			
 			odcienie_szaroœci(rin1, gin1, bin1);
 			odcienie_szaroœci(rin2, gin2, bin2);
 			odcienie_szaroœci(rin3, gin3, bin3);
