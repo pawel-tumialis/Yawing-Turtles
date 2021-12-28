@@ -1,0 +1,3 @@
+void test();
+
+void AlgorithmPng(std::string Load, std::string Save, std::string Extension);

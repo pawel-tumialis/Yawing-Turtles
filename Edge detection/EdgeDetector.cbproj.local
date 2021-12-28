@@ -1,21 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.461,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.fmx=C:\PROGRAMOWANIE\Edge_detection\Main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.141,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.831,=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.450,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\Algorithm.cpp=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.461,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.h=C:\PROGRAMOWANIE\Edge_detection\Main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.141,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.945,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\MainProject.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.615,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\EdgeDetectorPCH1.h=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\Edge_DetectorPCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.284,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\Edge_DetectorPCH1.h=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\MainProjectPCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.326,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\MainProject.cbproj=C:\PROGRAMOWANIE\Edge_detection\MainProject.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.461,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.fmx=C:\PROGRAMOWANIE\Edge_detection\Main.fmx</Transaction>
     <Transaction>1899.12.30 00:00:00.000.461,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.cpp=C:\PROGRAMOWANIE\Edge_detection\Main.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.141,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.316,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\Edge_Detector.cbproj=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\MainProject.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.641,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\EdgeDetector.cbproj=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\Edge_Detector.cbproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.592,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\MainProjectPCH1.h=C:\PROGRAMOWANIE\Edge_detection\MainProjectPCH1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.141,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.fmx</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.141,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Unit1.h=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Main.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.223,=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\File1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.763,=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\File2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.441,C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\AlgorithmHeader.h=C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge detection\File2.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.909,=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.945,C:\Users\pawel\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\pawel\Documents\Embarcadero\Studio\Projects\MainProjectPCH1.h</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="EdgeDetector.cpp"/>
+    <File Path="EdgeDetectorPCH1.h"/>
+    <File Path="Main.cpp"/>
+    <File Path="Main.cpp"/>
+    <File Path="Main.fmx"/>
+    <File Path="Main.h"/>
+    <File Path="Algorithm.cpp"/>
+    <File Path="AlgorithmHeader.h"/>
+  </ProjectSortOrder>
 </BorlandProject>

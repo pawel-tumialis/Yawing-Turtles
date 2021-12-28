@@ -1,0 +1,4 @@
+void AlgorithmPng(String Load, String Save, String Extension);
+void test();
+
+

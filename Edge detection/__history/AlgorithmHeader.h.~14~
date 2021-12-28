@@ -1,0 +1,5 @@
+void AlgorithmPng(String Load, String Save, String Extension);
+void test();
+void AlgorithmBmp(String path_in, String path_out);
+
+

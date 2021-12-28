@@ -1,4 +1,4 @@
-.\Win64\Debug\Main.o: \
+.\Win64\Debug\Algorithm.o: \
   C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection\EdgeDetectorPCH1.h \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\fmx.h \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\rtl\System.hpp \
@@ -330,6 +330,23 @@
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.Memo.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.Memo.Types.hpp \
   c:\program\ files\ (x86)\embarcadero\studio\21.0\include\windows\fmx\FMX.TreeView.hpp \
-  Main.cpp \
-  C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection/AlgorithmHeader.h \
-  C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection/Main.h
+  Algorithm.cpp \
+  C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Edge\ detection\AlgorithmHeader.h \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\fstream \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\filesystem \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\algorithm \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xmemory \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xheap \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\chrono \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\ratio \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\Dinkum/threads/xtimec.h \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\Dinkum/threads/xthrcommon.h \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\codecvt \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\locale \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\string \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xlocbuf \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xlocmes \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xlocmon \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\xloctime \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\list \
+  c:\program\ files\ (x86)\embarcadero\studio\21.0\include\dinkumware64\memory

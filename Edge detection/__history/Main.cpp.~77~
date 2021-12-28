@@ -2,6 +2,7 @@
 
 #include <fmx.h>
 #include <string.h>
+#include "AlgorithmHeader.h"
 #pragma hdrstop
 
 #include "Main.h"
@@ -30,6 +31,8 @@ TMainWindow *MainWindow;
    }
 }Image1;
 
+//-----------------------GUI
+
 const String InfoAuthors="This program was written by: \n Agnieszka Klingiert \n Mateusz Po³om \n Mateusz Porêbiak \n Pawe³ Tumialis";
 const String InfoProject="This program supports images in three extentions: .bmp, .jpg, .png";
 
@@ -37,7 +40,7 @@ const String InfoProject="This program supports images in three extentions: .bmp
 __fastcall TMainWindow::TMainWindow(TComponent* Owner)
 	: TForm(Owner)
 {
-	OpenDialog1->Filter = "Bitmap (*.bmp)|*.BMP|Jpg (*.jpg)|*.JPG|Png (*.png)|*.PNG";
+	OpenDialog1->Filter = "Bitmap (*.bmp)|*.BMP";
 }
 //---------------------------------------------------------------------------
 
@@ -61,8 +64,12 @@ void __fastcall TMainWindow::RunClick(TObject *Sender)
 	}else if(Image1.SavePath==""){
 		ShowMessage("You didn`t choose save location!");
 	}else{
-		ShowMessage("Algorithm");
-        Image1.ClearImage();
+		if(Image1.ImageExtension==".bmp"){
+		   test();//AlgorithmBmp(Image1.LoadPath,Image1.SavePath+Image1.ImageExtension);
+		}
+		Image1.ClearImage();
+		LoadBox->IsChecked=false;
+		SaveBox->IsChecked=false;
 	}
 
 }
@@ -73,9 +80,8 @@ void __fastcall TMainWindow::LoadClick(TObject *Sender)
 	if(OpenDialog1->Execute()){
 		if (FileExists(OpenDialog1->FileName)){
 				Image1.LoadPath=OpenDialog1->FileName;
-				ShowMessage(Image1.LoadPath);
 				Image1.FindExtension();
-				ShowMessage(Image1.ImageExtension);
+				LoadBox->IsChecked=true;
 		}
 	}
 }
@@ -85,6 +91,7 @@ void __fastcall TMainWindow::SaveClick(TObject *Sender)
 {
 		 if(SaveDialog1->Execute()){
 			Image1.SavePath=SaveDialog1->FileName;
-			ShowMessage(Image1.SavePath);
+			SaveBox->IsChecked=true;
 		 }
 }
+
