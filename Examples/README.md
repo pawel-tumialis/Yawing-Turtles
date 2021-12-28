@@ -1,1 +1,4 @@
+# Example outputs of EdgeDetector
+
+
 
