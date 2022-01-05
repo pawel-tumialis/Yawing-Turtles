@@ -1,2 +1,4 @@
 C:\PROGRAMOWANIE\Hack_szyfr\Debug\Hack_szyfr.exe
 C:\PROGRAMOWANIE\Hack_szyfr\Debug\Hack_szyfr.pdb
+C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Szyfrowanie\Debug\Hack_szyfr.exe
+C:\Users\pawel\Documents\GitHub\Yawing-Turtles\Szyfrowanie\Debug\Hack_szyfr.pdb
