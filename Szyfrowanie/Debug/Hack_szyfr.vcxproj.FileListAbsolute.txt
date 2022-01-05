@@ -1,0 +1,2 @@
+C:\PROGRAMOWANIE\Hack_szyfr\Debug\Hack_szyfr.exe
+C:\PROGRAMOWANIE\Hack_szyfr\Debug\Hack_szyfr.pdb

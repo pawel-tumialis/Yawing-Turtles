@@ -1,0 +1,21 @@
+﻿  Hack_szyfr.cpp
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(35,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(36,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(64,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(65,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(88,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(89,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(117,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(118,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(141,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(142,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(170,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(171,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(247,20): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(249,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(264,22): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(275,12): warning C4018: ">": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(306,15): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(329,21): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+C:\PROGRAMOWANIE\Hack_szyfr\Hack_szyfr.cpp(237): warning C4715: "chr”: niewszystkie ścieżki kodu zwracają wartość
+  Hack_szyfr.vcxproj -> C:\PROGRAMOWANIE\Hack_szyfr\Debug\Hack_szyfr.exe
